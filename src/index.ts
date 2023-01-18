@@ -1,4 +1,5 @@
-import { IPoint } from "./interface";
+import { CreateSvgObject } from "./helper";
+import { IPoint, NodeName } from "./interface";
 import { Point } from "./pointDefs";
 
 const btTest: HTMLElement = document.getElementById("btTest") as any;
@@ -63,6 +64,18 @@ btTest?.addEventListener("click", () => {
 })
 
 const aa: HTMLElement = document.getElementById("btBody") as any;
+
+const vytvorenObj=():HTMLElement=>{
+  let e:HTMLElement= CreateSvgObject(NodeName.line,{
+    _id:777,
+    x1:0,
+    y1:0,
+    x2:200,
+    y2:300,
+    style:"stroke:rgb(255,0,0);stroke-width:2"
+  })
+  return e;
+}
 
 aa.addEventListener("click", () => {
   let a: IPoint;
