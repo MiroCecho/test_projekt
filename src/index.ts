@@ -20,9 +20,9 @@ const ht = document.createElement('div') as any;
 
 const drawPath = (bb: IPoint[]) => {
   const ret: IPoint[] = Point.PointsFromObjects(bb);
-  let svg = new String(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"> <g fill="none" width="100%" height="100%"> <path d="`);
+  let svg = new String(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="500px"  style="padding: 20px;"> <g fill="none" width="100%" height="100%"><g transform="translate(20 10) scale(1)"> <path d="`);
   console.log(ret);
-  let a=0,b=0,c=0,d=0;
+  let a=0,b=0,c=0,d=0,start1=0,start2=0,end1=0,end2=0;
 
   for (let i = 1; i < bb.length; i++) {
     if(i==1){
@@ -30,11 +30,15 @@ const drawPath = (bb: IPoint[]) => {
       b=ret[i-1].y;
       c=ret[i].x;
       d=ret[i].y;
+      start1=a;
+      start2=b;
     }else{
       a+=ret[i-1].x;
       b+=ret[i-1].y;
       c=ret[i].x;
       d=ret[i].y;
+      end1=a+c;
+      end2=b+d;
     }
     // let text1 = ret[i-1].x.toString();
     // let text2 = ret[i-1].y.toString();
@@ -43,7 +47,7 @@ const drawPath = (bb: IPoint[]) => {
     svg += ` M ${a} ${b} l ${c} ${d} `;
     
   }
-  svg += `" stroke="red" stroke-width="3" width="100%" height="100%" /> </g> </svg>`;
+  svg += `" stroke="red" stroke-width="3" width="100%" height="100%" /> <circle cx="${start1}" cy="${start2}" r="5" style="fill: coral;" /> <circle cx="${end1}" cy="${end2}" r="5" style="fill: coral;" /> </g></g> </svg>`;
   console.log(svg);
 
   ht.innerHTML = svg;
@@ -98,3 +102,10 @@ bb.addEventListener("click", () =>{
     }
     );
 })
+
+const d1:HTMLElement = document.getElementById("d1") as any;
+const d2:HTMLElement = document.getElementById("d2") as any;
+
+const dragAndMove = () => {
+  
+}
