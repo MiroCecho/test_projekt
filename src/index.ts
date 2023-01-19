@@ -69,6 +69,14 @@ btTest?.addEventListener("click", () => {
 
 const aa: HTMLElement = document.getElementById("btBody") as any;
 
+aa.addEventListener("click", () => {
+  let a: IPoint;
+  a = new Point(7.222447, 8.45436355);
+  let b: IPoint = Point.ExactPoint(a, 2)
+  console.log(b.toString());
+
+})
+
 const vytvorenObj=():HTMLElement=>{
   let e:HTMLElement= CreateSvgObject(NodeName.line,{
     _id:777,
@@ -81,12 +89,11 @@ const vytvorenObj=():HTMLElement=>{
   return e;
 }
 
-aa.addEventListener("click", () => {
-  let a: IPoint;
-  a = new Point(7.222447, 8.45436355);
-  let b: IPoint = Point.ExactPoint(a, 2)
-  console.log(b.toString());
+const cc: HTMLElement = document.getElementById("create") as any;
 
+cc.addEventListener("click",()=>{
+  let e:HTMLElement = vytvorenObj();
+  console.log(e);
 })
 
 const bb:HTMLElement = document.getElementById("load") as any;
@@ -107,5 +114,5 @@ const d1:HTMLElement = document.getElementById("d1") as any;
 const d2:HTMLElement = document.getElementById("d2") as any;
 
 const dragAndMove = () => {
-  
+
 }
