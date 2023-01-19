@@ -1,8 +1,11 @@
 import { CreateSvgObject } from "./helper";
 import { IPoint, NodeName } from "./interface";
 import { Point } from "./pointDefs";
+import { SvgRenderer } from "./svgRenderer";
 
 const btTest: HTMLElement = document.getElementById("btTest") as any;
+
+var renderer:SvgRenderer;
 
 const spocitajDlzku = (bb: IPoint[]): number => {
   let dl: number = 0;
@@ -51,18 +54,18 @@ const drawPath = (bb: IPoint[]) => {
   console.log(svg);
 
   ht.innerHTML = svg;
-  const box = document.getElementById('box');
-  box?.append(ht);
+  // const box = document.getElementById('box');
+  // box?.append(ht);
 }
 
 btTest?.addEventListener("click", () => {
   fetch("http://localhost:3000/drawing/1")
     .then(response => response.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
 
-      const points: IPoint[] = data.visuals.find(f => f.type === 1).points;
-      const dl: number = spocitajDlzku(points);
+      // const points: IPoint[] = data.visuals.find(f => f.type === 1).points;
+      // const dl: number = spocitajDlzku(points);
     }
     );
 })
