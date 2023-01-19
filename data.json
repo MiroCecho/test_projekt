@@ -43,6 +43,28 @@
             "stroke-width": 4,
             "stroke-dasharray": 2
           }
+        },{
+          "center": {
+            "x": 40.02,
+            "y": 68.13
+          },
+          "r": 10.79,
+          "handle": 625,
+          "type": 5,
+          "range": {
+            "width": 21.58,
+            "height": 21.58,
+            "origin": {
+              "x": 29.23,
+              "y": 78.92
+            }
+          },
+          "level": "Default",
+          "style": {
+            "stroke": "#0f0",
+            "stroke-width": 4,
+            "fill": "#00f"
+          }
         }
       ],
       "levels": [
