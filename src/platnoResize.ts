@@ -32,7 +32,8 @@ export class PlatnoResize {
                 this.spendlik.setAttribute("style",`left:${btPosition.x}px;top:${btPosition.y}px`)
                 this.spendlik.style.cursor = "grabbing";
                 this.spendlik.style.backgroundColor = "orange";
-                this.platno.setAttribute("style",`width:${ptPlatno.x}px;height:${ptPlatno.y}px;`)
+                this.platno.setAttribute("style",`width:${ptPlatno.x}px;height:${ptPlatno.y}px;`);
+                this.infoSize.innerText = "Rozmery plátna: šírka:" + ptPlatno.x + "; výška:" + ptPlatno.y;
             }
         })
         this.spendlik.addEventListener("pointerup", () => {
