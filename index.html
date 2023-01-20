@@ -3,15 +3,28 @@
 <style>
   html{
     background-color:aquamarine;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
   }
   div#box{
     position: absolute;
     left: 10px;
     top:50px;
-    width:800px;
-    height: 600px;
     background-color: black;
     cursor: crosshair;
+  }
+  #btResize{
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+  }
+  #infoSize{
+    position: absolute;
+    left: 180px;
+    top:10px;
+    font-family: Tahoma, sans-serif;
   }
 </style>
 <head>
@@ -21,13 +34,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-  <button id="btTest">test</button>
+  <button id="btTest"><b>Draw</b></button>
   <button id="btBody">bod</button>
   <button id="load">bod</button>
+  <p id="infoSize">Rormery plátna:</p>
 <body>
-  <div id="box">
+  <div id="box" style="width: 800px;height: 600px;">
     <svg id="svg-platno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"></svg>
   </div>
+  <button id="btResize"
+  style="left:790px;top:635px;"
+  >...</button>
   <script type="module" src="./src/index.ts"></script>
 </body>
 

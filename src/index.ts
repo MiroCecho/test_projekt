@@ -58,11 +58,12 @@ btTest?.addEventListener("click", () => {
   fetch("http://localhost:3000/drawing/1")
     .then(response => response.json())  
     .then((data) => {
-      renderer=new SvgRenderer(data);
-      // console.log(data);
-
-      // const points: IPoint[] = data.visuals.find(f => f.type === 1).points;
-      // const dl: number = spocitajDlzku(points);
+      if(renderer){
+        renderer.scale2Fit();
+        renderer.renderer();
+      } else{
+        renderer=new SvgRenderer(data);
+      }
     }
     );
 })
@@ -95,8 +96,6 @@ bb.addEventListener("click", () =>{
   fetch("http://localhost:3000/drawing/1")
     .then(response => response.json())
     .then((data) => {
-      console.log(data);
-
       const points: IPoint[] = data.visuals.find(f => f.type === 1).points;
       drawPath(points);
     }

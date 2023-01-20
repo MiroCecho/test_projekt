@@ -24,6 +24,7 @@ export class Circle extends Visual{
     constructor(src:any,tp:ITransformParameters){
         super();
         this.type=TypeConstant.circle;
+        this.range=src.range;
         this.points = transformArray2Window([src.center,new Point(src.center.x+src.r,src.center.y)], tp);
         this.r=Point.dlzka(this.points[0],this.points[1]);
         this.style
