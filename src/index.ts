@@ -2,6 +2,8 @@ import { CreateSvgObject } from "./helper";
 import { IPoint, NodeName } from "./interface";
 import { Point } from "./pointDefs";
 import { SvgRenderer } from "./svgRenderer";
+import { Circle } from "./visuals/circle";
+import { Visual } from "./visuals/visual";
 
 const btTest: HTMLElement = document.getElementById("btTest") as any;
 
@@ -58,6 +60,22 @@ const drawPath = (bb: IPoint[]) => {
   // box?.append(ht);
 }
 
+export const loaded = () =>{
+  fetch("http://localhost:3000/drawing/1")
+    .then(response => response.json())  
+    .then((data) => {
+      if(renderer){
+        renderer.scale2Fit();
+        renderer.renderer();
+      } else{
+        renderer=new SvgRenderer(data);
+      }
+    }
+    );
+}
+
+loaded();
+
 btTest?.addEventListener("click", () => {
   fetch("http://localhost:3000/drawing/1")
     .then(response => response.json())  
@@ -75,12 +93,33 @@ btTest?.addEventListener("click", () => {
 const aa: HTMLElement = document.getElementById("btBody") as any;
 
 aa.addEventListener("click", () => {
-  let a: IPoint;
-  a = new Point(7.222447, 8.45436355);
-  let b: IPoint = Point.ExactPoint(a, 2)
-  console.log(b.toString());
+  // let a: IPoint;
+  // a = new Point(7.222447, 8.45436355);
+  // let b: IPoint = Point.ExactPoint(a, 2)
+  // console.log(b.toString());
+  let x,y;
+  
+  const platn: HTMLElement = document.getElementById("box") as any;
+  // platn.addEventListener("click",(event)=>{
+  //     x = event.clientX;
+  //     y = event.clientY;
+  //     console.log(x,y);
+  // });
+  platn.addEventListener("click",getClickPosition,false);
 
 })
+
+function getClickPosition(e){
+  let xPos = e.clientX;
+  let yPos = e.clientY;
+  console.log(xPos,yPos);
+  let v : Visual;
+  
+  // let cir = new Circle();
+  
+  // cir.points[0].x=xPos;
+  // cir.points[0].y=yPos;
+}
 
 const vytvorenObj=():HTMLElement=>{
   let e:HTMLElement= CreateSvgObject(NodeName.line,{
@@ -115,9 +154,9 @@ bb.addEventListener("click", () =>{
     );
 })
 
-const d1:HTMLElement = document.getElementById("d1") as any;
-const d2:HTMLElement = document.getElementById("d2") as any;
+// const d1:HTMLElement = document.getElementById("d1") as any;
+// const d2:HTMLElement = document.getElementById("d2") as any;
 
-const dragAndMove = () => {
+// const dragAndMove = () => {
 
-}
+// }

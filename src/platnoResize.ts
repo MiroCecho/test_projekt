@@ -1,3 +1,4 @@
+import { loaded } from ".";
 import { getSize } from "./helper";
 import { IPoint } from "./interface";
 import { Point } from "./pointDefs";
@@ -13,10 +14,11 @@ export class PlatnoResize {
         let btPosition: IPoint;
         let move: boolean = false;
         this.spendlik.style.display="";
-        const reset= ()=>{
+        const reset = ()=>{
             this.spendlik.style.backgroundColor = "";
             move = false;
             this.spendlik.style.cursor = "nwse-resize";
+            loaded();
         }
         this.spendlik.addEventListener("pointerdown", () => {
             this.spendlik.style.backgroundColor = "yellow";
