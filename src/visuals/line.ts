@@ -21,6 +21,7 @@ export class Line extends Visual{
         super();
         this.type=TypeConstant.line;
         this.points = transformArray2Window(src.points, tp);
+        this.range=src.range;
         this.style
         this.style = (src.style) ? src.style : undefined
     }

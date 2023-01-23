@@ -35,13 +35,21 @@
   div#box{
     position: absolute;
     left: 10px;
-    top:80px;
-    width:800px;
-    height: 600px;
+    top:100px;
     background-color: black;
     cursor: crosshair;
-    margin-bottom: 20px;
   }
+  #btResize{
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+  }
+  /* #infoSize{
+    position: absolute;
+    left: 180px;
+    top:10px;
+    font-family: Tahoma, sans-serif;
+    } */
 </style>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -51,7 +59,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <button id="btTest" class="btn btn-outline-success" type="button">test</button>
+          <button id="btTest" class="btn btn-outline-success" type="button">Draw</button>
         </li>
         <li class="nav-item">
           <button id="btBody" class="btn btn-outline-success" type="button">bod</button>
@@ -62,13 +70,12 @@
         <li class="nav-item">
           <button id="create" class="btn btn-outline-success" type="button">Vytvor</button>
         </li>
+        <li class="nav-item">
+          <p id="infoSize" class="btn btn-outline-success">Rormery plátna:</p>
+        </li>
       </ul>
     </div>
   </nav>
-  
-  
-  
-
   
   <!-- <div style="background-color: blueviolet; width: 100%; height: 100%; ">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" >
@@ -84,9 +91,12 @@
     </svg>
   </div> -->
   <!-- <div id="box"></div> -->
-  <div id="box">
+  <div id="box" style="width: 800px;height: 600px;">
     <svg id="svg-platno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"></svg>
   </div>
+  <button id="btResize"
+  style="left:790px;top:685px;display:none"
+  >...</button>
   <script type="module" src="./src/index.ts"></script>
 </body>
 
