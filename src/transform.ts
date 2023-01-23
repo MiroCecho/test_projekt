@@ -7,7 +7,7 @@ export const transform2Window=(b: IPoint, trf: ITransformParameters, r?: number)
       r = 1;
     }
     const x: number = Round((b.x - trf.bb.x) * trf.scl + trf.trl.x, r);
-    const y: number = Round((b.y - trf.bb.y) * -trf.scl + trf.trl.y, 1);
+    const y: number = Round((b.y - trf.bb.y) * -trf.scl + trf.trl.y, r);
     return new Point(x, y);
   }
  export const transformArray2Window=(bb: IPoint[], trf: ITransformParameters, r?: number): IPoint[]=> {

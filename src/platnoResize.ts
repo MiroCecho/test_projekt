@@ -6,12 +6,13 @@ export class PlatnoResize {
     platno: HTMLElement;
     spendlik: HTMLElement;
     infoSize: HTMLElement;
-
+    body:HTMLElement;
 
     resizeEvents() {
         let ptPlatno: IPoint;
         let btPosition: IPoint;
         let move: boolean = false;
+        this.spendlik.style.display="";
         const reset= ()=>{
             this.spendlik.style.backgroundColor = "";
             move = false;
@@ -24,7 +25,7 @@ export class PlatnoResize {
             move = true;
             this.spendlik.style.cursor = "grab";
         })
-        this.spendlik.addEventListener("pointermove", (e: PointerEvent) => {
+        this.body.addEventListener("pointermove", (e: PointerEvent) => {
             if (move) {
                 const dt: IPoint = new Point(e.movementX, e.movementY);
                 btPosition=btPosition.AddPoint(dt);
@@ -40,7 +41,7 @@ export class PlatnoResize {
             reset();
         })
         this.spendlik.addEventListener("pointerleave", () => {
-           reset();
+          reset();
         })
     }
 
@@ -51,6 +52,7 @@ export class PlatnoResize {
         this.platno = platno;
         this.spendlik = spendlik;
         this.spendlik.style.cursor = "nwse-resize";
+        this.body=document.getElementsByTagName("body")[0];
         this.resizeEvents();
     }
 }
