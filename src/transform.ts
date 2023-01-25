@@ -17,3 +17,11 @@ export const transform2Window=(b: IPoint, trf: ITransformParameters, r?: number)
     });
     return ret;
   }
+  export const transformFromWindow=(b: IPoint, trf: ITransformParameters, r?: number): IPoint=> {
+    if (!r) {
+      r = 1;
+    }
+    const x: number = Round((b.x -  trf.trl.x) / trf.scl + trf.bb.x, r);
+    const y: number = Round((b.y -  trf.trl.y) / -trf.scl + trf.bb.y, r);
+    return new Point(x, y);
+  }

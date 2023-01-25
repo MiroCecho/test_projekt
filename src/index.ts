@@ -1,5 +1,6 @@
+import { FileUpload } from "./file-upload";
 import { CreateSvgObject } from "./helper";
-import { IPoint, NodeName } from "./interface";
+import { IPoint, ITransformParameters, NodeName } from "./interface";
 import { Point } from "./pointDefs";
 import { SvgRenderer } from "./svgRenderer";
 import { Circle } from "./visuals/circle";
@@ -8,6 +9,7 @@ import { Visual } from "./visuals/visual";
 const btTest: HTMLElement = document.getElementById("btTest") as any;
 
 var renderer:SvgRenderer;
+var fileupload:FileUpload;
 
 const spocitajDlzku = (bb: IPoint[]): number => {
   let dl: number = 0;
@@ -112,9 +114,35 @@ aa.addEventListener("click", () => {
 function getClickPosition(e){
   let xPos = e.clientX;
   let yPos = e.clientY;
+  let b: IPoint;
+  let tp:ITransformParameters;
+  b = new Point(xPos,yPos);
   console.log(xPos,yPos);
-  let v : Visual;
   
+  fetch("http://localhost:3000/drawing/1")
+  .then(response => response.json())  
+  .then((data) => {
+    if(renderer){
+      renderer.scale2Fit();
+      renderer.renderer();
+    } else{
+      fileupload=new FileUpload(data);
+    }
+  }
+  );
+
+  // fileupload.resizeFromScreen(b,tp);
+  
+  // fetch("http://localhost:3000/drawing/1",{
+  //   method: `POST`,
+  //   body: jSobj,
+  // }).then(res => res.json())
+  // .then(data =>console.log(data))
+  // .catch(err => {
+  //   console.log(err);
+  // })
+  
+
   // let cir = new Circle();
   
   // cir.points[0].x=xPos;

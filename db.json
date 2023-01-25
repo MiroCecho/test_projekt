@@ -1,0 +1,86 @@
+{
+    "drawing": [
+      {
+        "id": 1,
+        "name": "ddd",
+        "visuals": [
+          {
+            "points": [
+              {
+                "x": 2.12,
+                "y": 13.06
+              },
+              {
+                "x": 11.09,
+                "y": 44.83
+              },
+              {
+                "x": 43.85,
+                "y": 24.46
+              },
+              {
+                "x": 54.54,
+                "y": 46.55
+              },
+              {
+                "x": 65.26,
+                "y": 41.36
+              }
+            ],
+            "handle": 624,
+            "type": 1,
+            "range": {
+              "width": 63.14,
+              "height": 33.48,
+              "origin": {
+                "x": 2.12,
+                "y": 46.55
+              }
+            },
+            "level": "Default",
+            "style": {
+              "stroke": "#00f",
+              "stroke-width": 4,
+              "stroke-dasharray": 2
+            }
+          },{
+            "center": {
+              "x": 40.02,
+              "y": 68.13
+            },
+            "r": 10.79,
+            "handle": 625,
+            "type": 5,
+            "range": {
+              "width": 21.58,
+              "height": 21.58,
+              "origin": {
+                "x": 29.23,
+                "y": 78.92
+              }
+            },
+            "level": "Default",
+            "style": {
+              "stroke": "#0f0",
+              "stroke-width": 4,
+              "fill": "#00f"
+            }
+          }
+          
+        ],
+        "levels": [
+          {
+            "name": "Default",
+            "number": 0,
+            "description": "",
+            "count": 2,
+            "stroke": "#000",
+            "stroke-width": 2,
+            "visible": true
+          },{
+            
+          }
+        ]
+      }
+    ]
+  }
