@@ -16,7 +16,6 @@ export class PlatnoResize {
         const reset= ()=>{
             this.spendlik.style.backgroundColor = "";
             move = false;
-            this.spendlik.style.cursor = "nwse-resize";
         }
         this.spendlik.addEventListener("pointerdown", () => {
             this.spendlik.style.backgroundColor = "yellow";

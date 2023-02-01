@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  html{
+    background-color:aquamarine;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+  }
+  div#box{
+    position: absolute;
+    left: 10px;
+    top:50px;
+    background-color: black;
+    cursor: crosshair;
+  }
+  #btResize{
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+  }
+  #infoSize{
+    position: absolute;
+    left: 180px;
+    top:10px;
+    font-family: Tahoma, sans-serif;
+  }
+</style>
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHIAAABqBAMAAACSdhi4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURQCAAAAAAICAQAAA/4AAAP///18D928AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEtSURBVFjD7dTRbcMwDARQawNR6QTaQOAEArz/TKVTx1Vj8uQyiJsG4v/DHRk5U39SVmfIx2XwyzzkkEMekel8GfwyD4knnS/Nsi8p0/nSLpvdkU+ToGx2R2Z35OtJtGZ2Rz5JJq/EkdkdCWQgIiijKZkZ0YkseeGFgi+boh0pU8zYaTboKu3G0zzLJaJRFlGRMnW3LTF36JdcgqPa1aY3KblR7crWib9lQwPdSS5QbjTcOzW1lVcqj06BkpqQlBvrTHsTPyR9VGJ7CGTKXABNUKLQ0t5pJysKbQvvJKzbFt7LCmUBshNKbrn1/b28PSZF4kW3VR1y7euRxS+TIXsnWkNd8rqpT8ofLfnkMkO+v6zvJcu/amvKYz+oKuuQHXnouLqsfyCP1DVkN5T5EwHmEG1if4yuAAAAAElFTkSuQmCC" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="module" crossorigin src="/assets/index.f2cecafe.js"></script>
+</head>
+  <button id="btTest"><b>Draw</b></button>
+  <button id="btBody">bod</button>
+  <button id="load">bod</button>
+  <p id="infoSize">Rormery plátna:</p>
+<body>
+  <div id="box" style="width: 800px;height: 600px;">
+    <svg id="svg-platno" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"></svg>
+  </div>
+  <button id="btResize"
+  style="left:790px;top:635px;display:none"
+  >...</button>
+  
+</body>
+
+</html>
