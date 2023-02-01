@@ -117,7 +117,7 @@ function getClickPosition(e){
   let b: IPoint;
   let tp:ITransformParameters;
   b = new Point(xPos,yPos);
-  console.log(xPos,yPos);
+  // console.log(b);
   
   fetch("http://localhost:3000/drawing/1")
   .then(response => response.json())  
@@ -126,7 +126,7 @@ function getClickPosition(e){
       renderer.scale2Fit();
       renderer.renderer();
     } else{
-      fileupload=new FileUpload(data);
+      fileupload=new FileUpload(data,b);
     }
   }
   );

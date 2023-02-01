@@ -9,6 +9,7 @@ export class FileUpload{
     src: any;
     tp: ITransformParameters;
     rgOfAll: IBox;
+    pt: IPoint;
     
     scale2Fit() {
         const rr: IBox[] = this.src.visuals.map(f => f.range);
@@ -16,15 +17,18 @@ export class FileUpload{
         const platno: IPoint = getSize(this.platno);
         const window: IBox = { origin: new Point, width: platno.x, height: platno.y }
         this.tp = getDefaultTP(window, this.rgOfAll);
+        console.log(this.pt);
     }
 
     resizeFromScreen(){
 
     }
-    constructor(src: any) {
+    constructor(src: any,b: IPoint) {
         this.src = src;
         this.infoSize = document.getElementById("infoSize") as any;
         this.platno = document.getElementById("box") as any;
+        this.pt = b;
+        
         // this.svg = this.platno.querySelector("svg") as any;
         this.scale2Fit();
         this.resizeFromScreen();
