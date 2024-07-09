@@ -1,11 +1,4 @@
 # Projekt testovania
 
-## rozbehnutie projektu oboznamenie sa s ts
+## vyčidtený projekt príprava na testovanie pripojenia sa na bentley iTwins
 
-### Práca s json-server
-  https://www.npmjs.com/package/json-server?activeTab=readme#getting-started
-
-ako načítať, uložiť, aktualizovať dáta *(json fragmenty)*
-
-### použitie mini jazyka pre svg path
-  https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths 
