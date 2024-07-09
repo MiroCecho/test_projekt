@@ -10,7 +10,7 @@ export default {
   },
   server: {
     hmr: { overlay: false },
-    port: 2023
+    port: 3000
   },
   exports:{}
 };
